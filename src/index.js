@@ -1,4 +1,11 @@
-import http from 'http';
+const http = require('http');
+const moduleAlias = require('module-alias');
+
+// Alias react to preact
+moduleAlias.addAliases({
+  react: 'preact/compat/dist/compat',
+  'react-dom': 'preact/compat/dist/compat'
+});
 
 let app = require('./server').default;
 
